@@ -25,24 +25,25 @@ This section provides a requirement overview of the system. Various functional m
 
 ## System architecture
 
-   System Description:
+   **System Description**:
 
 - The online art gallery platform/website will serve as a marketplace for artists to showcase and sell their artwork, and for viewers to browse and purchase art.
 - The platform will include features such as user registration and authentication, artwork search and browsing, artist profiles, product pages, shopping cart, checkout process, and payment integration.
   
-   System Architecture:
+   **System Architecture**:
    
 - The system architecture will consist of a front-end interface developed using a suitable web development framework or platform.
 - The back-end will include a database to store user information, artwork details, and transaction data.
 - Integration with a secure and reputable payment gateway will be implemented for seamless and secure payment processing.
 
-   Presentation Layer:
+      **Presentation Layer**:
 
 - Web Interface:User-friendly web pages for artwork browsing, shopping cart, and user/admin profiles.Responsively designed for various devices.
+
 - User Interface Framework:HTML, CSS, and JavaScript for client-side interactions.Frameworks like React or Angular for dynamic and responsive UI.
 - Web Server:Apache or Nginx to handle HTTP requests.SSL/TLS for secure communication.
 
-   Application Layer:
+       **Application Layer**:
 
 - Application Server:Node.js, Django, or Flask to handle application logic.Manages user authentication, shopping cart operations, and transaction processing.
 - Business Logic:Modules for user authentication, artwork management, and transaction processing.Integration with payment gateways for secure transactions.
