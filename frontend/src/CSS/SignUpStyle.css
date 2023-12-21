@@ -1,0 +1,88 @@
+body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: #e0f7fa; 
+  }
+  
+  .LoginContainer {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 55vw;
+  }
+  
+  .lh1 {
+    font-size: 60px;
+    color: #333; 
+  }
+  
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 45vw;
+  }
+  
+  .rightbox {
+    width: 80%;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95));
+    padding: 20px;
+    border-radius: 15px;
+    margin-left: 20px;
+  }
+  
+  .form-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  #email,
+  #pass,
+  #subbtn,
+  #firstName ,
+  #lastName,
+  #confirmPass{
+    padding: 15px;
+    font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+  }
+
+  .name-container {
+    display: flex;
+    gap: 10px; 
+  }
+  
+  #subbtn {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  #subbtn:hover {
+    background-color: #45a049; 
+  }
+  
+  .signup-link {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #555; 
+  }
+  
+  .signup-link a {
+    color: #4caf50;
+    text-decoration: none;
+  }
+  
