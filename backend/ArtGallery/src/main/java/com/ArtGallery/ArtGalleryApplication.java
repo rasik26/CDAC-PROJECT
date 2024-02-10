@@ -1,4 +1,4 @@
-package com.cdacproject.artgallery;
+package com.ArtGallery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

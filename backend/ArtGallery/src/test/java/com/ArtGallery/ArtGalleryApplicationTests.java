@@ -1,4 +1,4 @@
-package com.cdacproject.artgallery;
+package com.ArtGallery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
