@@ -1,5 +1,5 @@
 package com.demo.service;
 
-public class ProductServiceImpl {
+public class ProductServiceImpl implements ProductService {
 
 }
