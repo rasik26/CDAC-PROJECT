@@ -1,0 +1,28 @@
+product images :
+
+
+
+Product Controller
+getall
+getbycactegory
+getbyArtist
+insertproduct
+delete product;
+
+------------------------------------------------
+User 
+getalluser //admin
+deleteUser//
+
+getById;
+
+
+
+----------------------------
+cartcontroller
+getCart sessionuser
+getallCart //admin
+getbyartistId;
+------
+add product to cart;
+delete product from cart
