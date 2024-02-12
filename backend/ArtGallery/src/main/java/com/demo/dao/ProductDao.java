@@ -1,5 +1,5 @@
 package com.demo.dao;
 
-public class ProductDao {
+public interface ProductDao {
 
 }
