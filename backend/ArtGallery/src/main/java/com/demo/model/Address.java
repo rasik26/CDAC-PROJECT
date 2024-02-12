@@ -4,7 +4,7 @@ import jakarta.persistence.Id;
 
 public class Address {
 	@Id
-	private int adId;
+	private int addId;
 	private String address;
 	private String city;
 	private String state;

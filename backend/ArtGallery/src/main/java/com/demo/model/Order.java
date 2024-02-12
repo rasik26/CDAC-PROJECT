@@ -2,7 +2,7 @@ package com.demo.model;
 
 public class Order {
 	private int oId;
-	Product prod;
+	//Product prod;
 	Customer cust;
 	
 }
