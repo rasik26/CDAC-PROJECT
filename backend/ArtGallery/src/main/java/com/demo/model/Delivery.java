@@ -1,5 +1,6 @@
 package com.demo.model;
 
-public class Customer {
+public class Delivery {
 	
+
 }
