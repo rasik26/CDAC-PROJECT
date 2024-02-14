@@ -22,9 +22,13 @@ public class ProductController {
 
 	@Autowired
 	ProductService pservice;
+<<<<<<< HEAD
 	
 	
 	
+=======
+
+>>>>>>> d230d2051375a6f9650acfbbed1e1339fad26b1c
 	@GetMapping("/products") // controller for getting all products
 	public ResponseEntity<List<Product>> getAllProducts() {
 		List<Product> plist = pservice.getAllProducts();
@@ -39,13 +43,37 @@ public class ProductController {
 		else
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
+<<<<<<< HEAD
 	
 	@PostMapping("products/{pid}")
+=======
+
+	@PostMapping("/products/{pid}")
+>>>>>>> d230d2051375a6f9650acfbbed1e1339fad26b1c
 	public ResponseEntity<String> insertProduct(@RequestBody Product p) {
 		pservice.addnewProduct(p);
 		return ResponseEntity.ok("data added successfully");
 	}
+<<<<<<< HEAD
 	
+=======
+
+//	@GetMapping("/products") // controller for getting all products
+//	public ResponseEntity<List<Product>> getAllProducts() {
+//		List<Product> plist = pservice.getAllProducts();
+//		return ResponseEntity.ok(plist);
+//	}
+
+//	@GetMapping("/products/{category}")
+//	public ResponseEntity<List<Product>> getProductByCategory(@PathVariable("category") String categoryName) {
+//		List<Product> productList = pservice.getProductsByCategory(categoryName);
+//		if (productList != null)
+//			return ResponseEntity.ok(productList);
+//		else
+//			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//	}
+
+>>>>>>> d230d2051375a6f9650acfbbed1e1339fad26b1c
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity deleteById(@PathVariable int id) {
 		try {
@@ -56,10 +84,9 @@ public class ProductController {
 		}
 	}
 
-	
 	@GetMapping("/artist/{artistName}")
 	public ResponseEntity<List<Product>> getArtistByName(@PathVariable("artistName") String artistName) {
-		
+
 		List<Product> productsByArtistNameList = pservice.getProductByArtistName(artistName);
 
 		if (productsByArtistNameList != null)
@@ -70,20 +97,3 @@ public class ProductController {
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
