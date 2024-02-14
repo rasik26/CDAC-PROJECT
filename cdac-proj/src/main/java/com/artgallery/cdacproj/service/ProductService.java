@@ -12,4 +12,7 @@ public interface ProductService {
 	List<Product> getProductsByCategory(String category);
 
 
+	void addnewProduct(Product p);
+
+
 }
