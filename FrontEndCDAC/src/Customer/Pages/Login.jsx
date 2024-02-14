@@ -1,0 +1,24 @@
+import React from 'react';
+import {useNavigate } from 'react-router-dom'
+export default function Login() {
+  const navigate = useNavigate();
+  return (
+    <div className="flex h-screen w-screen">
+      <div className="flex items-center justify-center h-screen w-5/12">
+        <h1 className="text-6xl text-gray-800">ART GALLERY</h1>
+      </div>
+
+      <div className="flex flex-col items-center justify-center h-screen w-7/12">
+        <div className="w-4/5 bg-white bg-opacity-95 p-5 rounded-lg ml-5">
+          <div className="p-5 rounded">
+            <input type="email" placeholder="Username" id="email" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" />
+            <input type="password" placeholder="Password" id="pass" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" />
+            <button id="subbtn" className="p-4 text-lg w-full bg-green-500 text-white cursor-pointer rounded hover:bg-green-600">SUBMIT</button>
+          </div>
+        </div>
+        
+        <p onClick={()=>navigate('/signUp')} className="text-lg mt-6 text-gray-700">Don't have an account? <a href="#" className="text-green-500 no-underline">Sign up</a></p>
+      </div>
+    </div>
+  );
+}
