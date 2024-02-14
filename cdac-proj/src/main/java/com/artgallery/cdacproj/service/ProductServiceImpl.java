@@ -24,5 +24,10 @@ public class ProductServiceImpl implements ProductService {
 	    return pdao.getProductByCategoryName(categoryName);
 	}
 
+	@Override
+	public void addnewProduct(Product p) {
+		pdao.save(p);
+	}
+
 
 }
