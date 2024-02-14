@@ -12,7 +12,14 @@ public interface ProductService {
 	List<Product> getProductsByCategory(String category);
 
 
+
+	List<Product> getProductByArtistName(String artistName);
+
+
+	void deleteById(int id);
+
 	void addnewProduct(Product p);
+
 
 
 }
