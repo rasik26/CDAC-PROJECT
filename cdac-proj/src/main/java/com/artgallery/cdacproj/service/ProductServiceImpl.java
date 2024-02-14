@@ -24,5 +24,15 @@ public class ProductServiceImpl implements ProductService {
 	    return pdao.getProductByCategoryName(categoryName);
 	}
 
+	@Override
+	public List<Product> getProductByArtistName(String artistName) {
+		return pdao.findByArtistName(artistName);
+	}
+
+	@Override
+	public void deleteById(int id) {
+		pdao.deleteById((long) id);
+	}
+
 
 }
