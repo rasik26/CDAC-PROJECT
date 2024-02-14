@@ -21,11 +21,10 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<Product> getProductsByCategory(String categoryName) {
-	    return pdao.getProductByCategoryName(categoryName);
+		return pdao.getProductByCategoryName(categoryName);
 	}
 
 	@Override
-<<<<<<< HEAD
 	public List<Product> getProductByArtistName(String artistName) {
 		return pdao.findByArtistName(artistName);
 	}
@@ -33,11 +32,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void deleteById(int id) {
 		pdao.deleteById((long) id);
-=======
-	public void addnewProduct(Product p) {
-		pdao.save(p);
->>>>>>> bb141492e928b9e981fb0a849d78b34eca16d3b5
 	}
 
+	public void addnewProduct(Product p) {
+		pdao.save(p);
+
+	}
 
 }
