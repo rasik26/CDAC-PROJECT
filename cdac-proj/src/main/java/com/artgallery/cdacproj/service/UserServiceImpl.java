@@ -14,7 +14,7 @@ import com.artgallery.cdacproj.dao.UserDao;
 import com.artgallery.cdacproj.model.User;
 
 @Service
-public class UserServiceImpl implements UserDetailsService{
+public class UserServiceImpl implements UserDetailsService,UserService{
 
 	@Autowired
 	private UserDao userDao;
@@ -29,6 +29,24 @@ public class UserServiceImpl implements UserDetailsService{
 		
 		List <GrantedAuthority> authorities = new ArrayList<>();
 		return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),authorities);
+	}
+
+	@Override
+	public User findUserById(Long userId) throws UserException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User findUserProfileByJwt(String jwt) throws UserException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		List<User> ulist = userDao.findAll();
+		return ulist;
 	}
 
 }
