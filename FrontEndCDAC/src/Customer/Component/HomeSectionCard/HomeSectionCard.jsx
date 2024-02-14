@@ -1,8 +1,13 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 export default function HomeSectionCard({ product }) {
+  const navigate = useNavigate();
+
+  const handleHomeProductClick = (artId) => {
+    navigate(`/art/${artId}`);
+  };
   return (
-    <div className='cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3'>
+    <div onClick={()=>handleHomeProductClick(product.id)} className='cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3'>
       <div className='h-[13rem] w-[15rem]'>
         <img src={product.imageUrl} alt="" className="object-cover w-full h-full" />
       </div>
@@ -13,7 +18,7 @@ export default function HomeSectionCard({ product }) {
       </div>
       <div className=''>
         <h3 className='font-medium text-gray-900'>
-          {product.artist}
+          By~{product.artistName}
         </h3>
       </div>
     </div>
