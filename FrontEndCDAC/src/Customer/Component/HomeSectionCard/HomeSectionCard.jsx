@@ -4,7 +4,9 @@ export default function HomeSectionCard({ product }) {
   const navigate = useNavigate();
 
   const handleHomeProductClick = (artId) => {
-    navigate(`/art/${artId}`);
+    // navigate(`/art/${artId}`);
+    navigate(`/art/${artId}`, { state: { product } });
+    
   };
   return (
     <div onClick={()=>handleHomeProductClick(product.id)} className='cursor-pointer flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden w-[15rem] mx-3'>

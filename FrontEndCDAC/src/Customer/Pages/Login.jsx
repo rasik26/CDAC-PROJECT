@@ -45,8 +45,8 @@ const Login = () => {
         <div className="w-4/5 bg-white bg-opacity-95 p-5 rounded-lg ml-5">
           <form onSubmit={handleSubmit}>
             <div className="p-5 rounded">
-              <input type="email" placeholder="Email" id="email" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.email} />
-              <input type="password" placeholder="Password" id="password" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.password} />
+              <input type="email" placeholder="Email" id="email" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.email} required/>
+              <input type="password" placeholder="Password" id="password" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.password} required/>
               <button type="submit" className="p-4 text-lg w-full bg-green-500 text-white cursor-pointer rounded hover:bg-green-600">SUBMIT</button>
             </div>
           </form>

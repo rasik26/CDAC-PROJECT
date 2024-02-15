@@ -37,7 +37,7 @@ export default function SignUp() {
       });
       if (response.status === 201) {
         alert('Signup successful! Please login.'); 
-        navigate('/login'); 
+        navigate('/'); 
       } else {
         throw new Error('Signup failed'); 
       }
@@ -58,12 +58,12 @@ export default function SignUp() {
           <form onSubmit={handleSubmit}>
             <div className="p-5 rounded">
               <div className="flex gap-4 mb-4">
-                <input type="text" placeholder="First Name" id="firstName" className="p-4 text-lg w-1/2 box-border border border-gray-300 rounded" onChange={handleChange} value={formData.firstName} />
-                <input type="text" placeholder="Last Name" id="lastName" className="p-4 text-lg w-1/2 box-border border border-gray-300 rounded" onChange={handleChange} value={formData.lastName} />
+                <input type="text" placeholder="First Name" id="firstName" className="p-4 text-lg w-1/2 box-border border border-gray-300 rounded" onChange={handleChange} value={formData.firstName} required/>
+                <input type="text" placeholder="Last Name" id="lastName" className="p-4 text-lg w-1/2 box-border border border-gray-300 rounded" onChange={handleChange} value={formData.lastName} required />
               </div>
-              <input type="email" placeholder="Email" id="email" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.email} />
-              <input type="password" placeholder="Password" id="password" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.password} />
-              <input type="password" placeholder="Confirm Password" id="confirmPassword" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.confirmPassword} />
+              <input type="email" placeholder="Email" id="email" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.email} required/>
+              <input type="password" placeholder="Password" id="password" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.password} required/>
+              <input type="password" placeholder="Confirm Password" id="confirmPassword" className="p-4 text-lg w-full box-border mb-4 border border-gray-300 rounded" onChange={handleChange} value={formData.confirmPassword} required/>
               <button type="submit" className="p-4 text-lg w-full bg-green-500 text-white cursor-pointer rounded hover:bg-green-600">SUBMIT</button>
             </div>
           </form>
