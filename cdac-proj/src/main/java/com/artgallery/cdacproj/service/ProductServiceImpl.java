@@ -25,10 +25,6 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-<<<<<<< HEAD
-
-=======
->>>>>>> d230d2051375a6f9650acfbbed1e1339fad26b1c
 	public List<Product> getProductByArtistName(String artistName) {
 		return pdao.findByArtistName(artistName);
 	}
@@ -36,18 +32,11 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void deleteById(int id) {
 		pdao.deleteById((long) id);
-<<<<<<< HEAD
-	}
-	
-	public void addnewProduct(Product p) {
-		pdao.save(p);
-=======
->>>>>>> d230d2051375a6f9650acfbbed1e1339fad26b1c
+
 	}
 
 	public void addnewProduct(Product p) {
 		pdao.save(p);
 
 	}
-
 }
