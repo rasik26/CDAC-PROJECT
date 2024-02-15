@@ -1,6 +1,7 @@
 package com.artgallery.cdacproj.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,9 +35,20 @@ public class ProductServiceImpl implements ProductService {
 		pdao.deleteById((long) id);
 	}
 
+	@Override
 	public void addnewProduct(Product p) {
 		pdao.save(p);
 
+	}
+
+	@Override
+	public Product getById(int id) {
+		// TODO Auto-generated method stub
+		Optional<Product> op = pdao.findById((long) id);
+		if (op.isPresent())
+			return op.get();
+		else
+			return null;
 	}
 
 }
