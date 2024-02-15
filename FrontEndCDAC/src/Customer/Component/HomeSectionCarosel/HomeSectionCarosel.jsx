@@ -8,6 +8,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
 
 export default function HomeSectionCarousel({data,sectionName}) {
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleSlideChange = (e) => setCurrentIndex(e.item);

@@ -9,6 +9,9 @@ import Order from '../Customer/Component/Order/Order'
 import Checkout from '../Customer/Component/Checkout/Checkout'
 import Product from '../Customer/Component/Product/Product'
 import ProductDetails from '../Customer/Component/ProductDetails/ProductDetails'
+import Login from '../Customer/Pages/Login'
+import SignUp from '../Customer/Pages/SignUp'
+import ArtistPage from '../Customer/Pages/ArtistPage'
 
 const CustomerRouters = () => {
   return (
@@ -26,6 +29,9 @@ const CustomerRouters = () => {
             <Route path="/cart/checkout" element={<Checkout/>}></Route>
             <Route path="/account/order" element={<Order/>}></Route>
             <Route path="/account/order/:orderId" element={<OrderDetails/>}></Route>
+            <Route path="/login" element={<Login/>}></Route> 
+            <Route path="/signUp" element={<SignUp/>}></Route> 
+            <Route path="/artist" element={<ArtistPage/>}></Route> 
 
             {/* <ProductDetails/>
   <Cart/>

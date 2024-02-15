@@ -16,5 +16,11 @@ public interface ProductService {
 
 	void addnewProduct(Product p);
 
+<<<<<<< HEAD
 	Product getById(int id);
 }
+=======
+	Product findById(Long productId);
+
+}
+>>>>>>> c7eebf0af18954d749c2173ff3978f455b034984

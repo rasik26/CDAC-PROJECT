@@ -33,6 +33,7 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public void deleteById(int id) {
 		pdao.deleteById((long) id);
+
 	}
 
 	@Override
@@ -42,6 +43,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public Product getById(int id) {
 		// TODO Auto-generated method stub
 		Optional<Product> op = pdao.findById((long) id);
@@ -51,4 +53,10 @@ public class ProductServiceImpl implements ProductService {
 			return null;
 	}
 
+=======
+	public Product findById(Long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+>>>>>>> c7eebf0af18954d749c2173ff3978f455b034984
 }
