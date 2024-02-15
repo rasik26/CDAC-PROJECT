@@ -10,8 +10,6 @@ import com.artgallery.cdacproj.model.Product;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
-	
 	@Autowired
 	private ProductDao pdao;
 
@@ -27,7 +25,10 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
 	public List<Product> getProductByArtistName(String artistName) {
 		return pdao.findByArtistName(artistName);
 	}
@@ -42,12 +43,18 @@ public class ProductServiceImpl implements ProductService {
 		pdao.save(p);
 
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
 
 	@Override
-	public Product findById(long id) {
+	public Product findById(Long productId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
 }
