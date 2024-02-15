@@ -10,21 +10,17 @@ public interface ProductService {
 
 	List<Product> getProductsByCategory(String category);
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> d230d2051375a6f9650acfbbed1e1339fad26b1c
 	List<Product> getProductByArtistName(String artistName);
 
 	void deleteById(int id);
-<<<<<<< HEAD
+
 
 	void addnewProduct(Product p);
+	
+	Product findById(long id);
 
-=======
->>>>>>> d230d2051375a6f9650acfbbed1e1339fad26b1c
 
-	void addnewProduct(Product p);
+
 
 }

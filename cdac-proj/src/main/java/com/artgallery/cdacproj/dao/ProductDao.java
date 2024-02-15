@@ -14,7 +14,7 @@ public interface ProductDao extends JpaRepository<Product, Long> {
 	List<Product> getProductByCategoryName(String categoryName);
 
 
-//	@Query("SELECT p FROM Product p WHERE p.artistName = :artistName")
+	@Query("SELECT p FROM Product p WHERE p.artistName = :artistName")
 	List<Product> findByArtistName(String artistName);
 
 	
