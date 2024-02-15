@@ -39,4 +39,10 @@ public class ProductServiceImpl implements ProductService {
 		pdao.save(p);
 
 	}
+
+	@Override
+	public Product findById(Long productId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
