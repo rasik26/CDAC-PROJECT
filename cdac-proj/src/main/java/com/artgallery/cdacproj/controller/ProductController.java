@@ -23,6 +23,12 @@ public class ProductController {
 	@Autowired
 	ProductService pservice;
 
+<<<<<<< HEAD
+=======
+	
+	
+
+>>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
 	@GetMapping("/products") // controller for getting all products
 	public ResponseEntity<List<Product>> getAllProducts() {
 		List<Product> plist = pservice.getAllProducts();
@@ -37,7 +43,10 @@ public class ProductController {
 		else
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
 
 	
 	@PostMapping("/products/{pid}")
@@ -47,27 +56,27 @@ public class ProductController {
 		return ResponseEntity.ok("data added successfully");
 	}
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
 
 
-
-//	@GetMapping("/products") // controller for getting all products
-//	public ResponseEntity<List<Product>> getAllProducts() {
-//		List<Product> plist = pservice.getAllProducts();
-//		return ResponseEntity.ok(plist);
-//	}
-
-//	@GetMapping("/products/{category}")
-//	public ResponseEntity<List<Product>> getProductByCategory(@PathVariable("category") String categoryName) {
-//		List<Product> productList = pservice.getProductsByCategory(categoryName);
-//		if (productList != null)
-//			return ResponseEntity.ok(productList);
-//		else
-//			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-//	}
+	@GetMapping("/getProduct/{id}")
+	public ResponseEntity<Product> getProductById(@PathVariable int id) {
+		Product p = pservice.getById(id);
+		if (p != null)
+			return ResponseEntity.ok(p);
+		else
+			return null;
+	}
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> deleteById(@PathVariable int id) {
 		try {
@@ -78,6 +87,8 @@ public class ProductController {
 		}
 	}
 
+
+	
 	@GetMapping("/artist/{artistName}")
 	public ResponseEntity<List<Product>> getArtistByName(@PathVariable("artistName") String artistName) {
 
@@ -89,5 +100,9 @@ public class ProductController {
 		else
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
+	
+	//getAllProductbyArttistId
+	//RemoveArtist
+	
 
 }

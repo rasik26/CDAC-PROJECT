@@ -21,24 +21,24 @@ import jakarta.persistence.OneToMany;
 public class User {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
+
 	private String firstname;
 	private String lastname;
 	private String email;
 	private String password;
 	private String role = "user";
 	private String mobile;
-	
-	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<Address> address = new ArrayList<>();
-	
+
 	@Embedded
 	@ElementCollection
-	@CollectionTable(name="payment_information",joinColumns=@JoinColumn(name="user_id"))
+	@CollectionTable(name = "payment_information", joinColumns = @JoinColumn(name = "user_id"))
 	private List<Paymentinformation> paymentInformation = new ArrayList<>();
-	
+
 	private LocalDateTime createdAt;
 
 	public User() {
@@ -137,7 +137,5 @@ public class User {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
-	
-	
-	
+
 }

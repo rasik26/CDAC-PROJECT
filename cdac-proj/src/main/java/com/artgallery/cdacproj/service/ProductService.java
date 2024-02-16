@@ -11,12 +11,16 @@ public interface ProductService {
 
 	List<Product> getProductsByCategory(String category);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
 	List<Product> getProductByArtistName(String artistName);
 
 	void deleteById(int id);
 
 	void addnewProduct(Product p);
+<<<<<<< HEAD
 
 	
 	Optional<Product> findById(long id);
@@ -24,9 +28,20 @@ public interface ProductService {
 
 
 
+=======
+>>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
 
 
+	Product getById(int id);
 
+<<<<<<< HEAD
 }
 
 
+=======
+
+	Product findById(Long productId);
+
+}
+
+>>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
