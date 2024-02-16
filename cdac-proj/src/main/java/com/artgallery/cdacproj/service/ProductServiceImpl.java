@@ -26,10 +26,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-<<<<<<< HEAD
 
-=======
->>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
 	public List<Product> getProductByArtistName(String artistName) {
 		return pdao.findByArtistName(artistName);
 	}
@@ -46,12 +43,9 @@ public class ProductServiceImpl implements ProductService {
 
 	}
 
-	@Override
-<<<<<<< HEAD
-	public Optional<Product> findById(long artId) {
-		return pdao.findById(artId);
+
 		
-=======
+
 
 	public Product getById(int id) {
 		// TODO Auto-generated method stub
@@ -62,10 +56,13 @@ public class ProductServiceImpl implements ProductService {
 			return null;
 	}
 
-	public Product findById(Long productId) {
+	@Override
+	public Optional<Product> findById(Long productId) {
 		// TODO Auto-generated method stub
-		return null;
->>>>>>> 7c2f37acf0437f0ae7dab3513e64f2640044c213
+		return pdao.findById(productId);
 	}
 
-}
+
+	}
+
+
