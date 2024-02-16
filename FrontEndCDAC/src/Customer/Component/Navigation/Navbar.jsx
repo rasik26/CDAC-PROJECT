@@ -16,6 +16,7 @@ const Navbar = () => {
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
+        
         if (token) {
             setIsLoggedIn(true);
         } else {
@@ -26,6 +27,8 @@ const Navbar = () => {
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
+    const firstName =sessionStorage.getItem('firstName');
+    const avatarName = firstName ? firstName.substring(0, 1).toUpperCase() : '';
 
     const handleMenuClose = () => {
         setAnchorEl(null);
@@ -34,6 +37,7 @@ const Navbar = () => {
     const handleLogout = () => {
   
         sessionStorage.removeItem('token');
+        sessionStorage.removeItem('cart');
         navigate('/');
     };
 
@@ -45,6 +49,7 @@ const Navbar = () => {
                     <p onClick={()=>navigate('/art')} className="mr-4 text-gray-700 cursor-pointer">Explore</p>
                     <p onClick={()=>navigate('/artist')} className="mr-4 text-gray-700 cursor-pointer">Artists</p>
                     <p className="mr-4 text-gray-700 cursor-pointer">About Us</p>
+                    <p onClick={()=>navigate('/seller')} className="mr-4 text-gray-700 cursor-pointer">Seller</p>
                 </div>
             </div>
             <div className="flex items-center">
@@ -52,7 +57,7 @@ const Navbar = () => {
                     <div>
                         <IconButton onClick={handleProfileMenuOpen} className="">
                             <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 mr-4">
-                                <Typography variant="body1">P</Typography>
+                                <Typography variant="body1">{avatarName}</Typography>
                             </div>
                         </IconButton>
                         <Menu

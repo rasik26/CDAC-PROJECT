@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
@@ -26,7 +28,7 @@ public class User {
 	private String lastname;
 	private String email;
 	private String password;
-	private String role;
+	private String role = "user";
 	private String mobile;
 	
 	@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
@@ -42,7 +44,7 @@ public class User {
 	public User() {
 	}
 
-	public User(long id, String firstname, String lastname, String email, String password, String role, String mobile,
+	public User(long id, String firstname, String lastname, String email, String password, String mobile,
 			List<Address> address, List<Paymentinformation> paymentInformation, LocalDateTime createdAt) {
 		super();
 		this.id = id;
@@ -50,7 +52,6 @@ public class User {
 		this.lastname = lastname;
 		this.email = email;
 		this.password = password;
-		this.role = role;
 		this.mobile = mobile;
 		this.address = address;
 		this.paymentInformation = paymentInformation;

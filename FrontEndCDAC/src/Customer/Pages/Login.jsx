@@ -25,6 +25,7 @@ const Login = () => {
 
         sessionStorage.setItem('token', response.data.jwt);
         sessionStorage.setItem('firstName', response.data.firstName); 
+        sessionStorage.setItem('id',response.data.id);
         navigate('/'); 
       } else {
         alert('Login failed. Please check your credentials.'); 

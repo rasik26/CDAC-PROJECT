@@ -12,6 +12,7 @@ import ProductDetails from '../Customer/Component/ProductDetails/ProductDetails'
 import Login from '../Customer/Pages/Login'
 import SignUp from '../Customer/Pages/SignUp'
 import ArtistPage from '../Customer/Pages/ArtistPage'
+import BecomeArtist from '../Customer/Pages/BecomeArtist'
 
 const CustomerRouters = () => {
   return (
@@ -32,6 +33,7 @@ const CustomerRouters = () => {
             <Route path="/login" element={<Login/>}></Route> 
             <Route path="/signUp" element={<SignUp/>}></Route> 
             <Route path="/artist" element={<ArtistPage/>}></Route> 
+            <Route path="/seller" element={<BecomeArtist/>}></Route> 
 
             {/* <ProductDetails/>
   <Cart/>

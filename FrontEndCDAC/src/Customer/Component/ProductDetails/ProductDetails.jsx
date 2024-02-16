@@ -1,49 +1,71 @@
-
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../Redux/Reducers/cartReducer';
 import { Button } from '@mui/material'
-import { useNavigate,useLocation } from 'react-router-dom'
+import axios from 'axios';
+import { useNavigate, useLocation } from 'react-router-dom'
 
 export default function ProductDetails() {
- const navigate = useNavigate();
-
-  // const handleaddtocart = ()=>{
-  // navigate("/cart")
-  // }
-
+  const navigate = useNavigate();
   const location = useLocation();
   const { product } = location.state;
+  // const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem('id'));
 
-  const dispatch = useDispatch();
+  const handleAddToCart = async () => {
+    // if (!isLoggedIn) {
+    //   navigate("/login");
+    //   return;
+    // }
 
-  const handleAddToCart = () => {
-    dispatch(addToCart(product));
+    try {
+      const userId = sessionStorage.getItem('id');
+      const artId = product.id;
+
+      const authToken = sessionStorage.getItem('token');
+
+      const config = {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        }
+      };
+      const response = await axios.post(
+        `http://localhost:5454/api/carts/${userId}/art/${artId}`,
+        {},
+        config
+      );
+
+      console.log(response.data);
+      sessionStorage.setItem('cart', JSON.stringify(response.data));
+      alert('Product added to cart successfully.');
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+      navigate('/login')
+    }
   };
+
   return (
     <div className="bg-white">
       <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol role="list" className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-            
-              <li key={product.id}>
-                <div className="flex items-center">
-                  <a  className="mr-2 text-sm font-medium text-gray-900">
-                    Category
-                  </a>
-                  <svg
-                    width={16}
-                    height={20}
-                    viewBox="0 0 16 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    className="h-5 w-4 text-gray-300"
-                  >
-                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                  </svg>
-                </div>
-              </li>
-         
+            <li key={product.id}>
+              <div className="flex items-center">
+                <a className="mr-2 text-sm font-medium text-gray-900">
+                  Category
+                </a>
+                <svg
+                  width={16}
+                  height={20}
+                  viewBox="0 0 16 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  className="h-5 w-4 text-gray-300"
+                >
+                  <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                </svg>
+              </div>
+            </li>
+
             <li className="text-sm">
               <a href={product.imageUrl} aria-current="page" className="font-medium text-gray-500 hover:text-gray-600">
                 {product.category.name}
@@ -61,17 +83,6 @@ export default function ProductDetails() {
                 className="h-full w-full object-cover object-center"
               />
             </div>
-            {/* <div className="flex flex-wrap space-x-5 justify-center">
-              {product.images.map((item, index) => (
-                <div key={index} className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="h-full w-full object-cover object-center"
-                  />
-                </div>
-              ))}
-            </div> */}
           </div>
 
           {/* Product info */}

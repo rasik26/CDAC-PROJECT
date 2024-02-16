@@ -1,23 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import MainCarousel from '../Component/HomeCarsole/MainCarasole';
 import HomeSectionCarosel from '../Component/HomeSectionCarosel/HomeSectionCarosel';
-import { paintings } from '../Data/paintings';
 import productService from '../Data/productService'; // Change import statement
 
 export default function HomePage() {
   const [paintingsData, setPaintingsData] = useState([]);
+  const [sculpturesData, setSculpturesData] = useState([]);
+  const [digitalArtData, setDigitalArtData] = useState([]);
+  const [canvasData, setCanvasData] = useState([]);
 
   useEffect(() => {
-    const fetchPaintingsData = async () => {
+    const fetchData = async () => {
       try {
-        const data = await productService.getProductsByCategory('Painting');
-        setPaintingsData(data);
+        const paintings = await productService.getProductsByCategory('Painting');
+        const sculptures = await productService.getProductsByCategory('Sculpture');
+        const digitalArt = await productService.getProductsByCategory('Digital');
+        const canvas = await productService.getProductsByCategory('Canvas');
+
+        setPaintingsData(paintings);
+        setSculpturesData(sculptures);
+        setDigitalArtData(digitalArt);
+        setCanvasData(canvas);
       } catch (error) {
-        console.error('Error fetching paintings data:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchPaintingsData();
+    fetchData();
   }, []);
 
   return (
@@ -25,9 +34,9 @@ export default function HomePage() {
       <MainCarousel />
       <div className='space-y-10 py-20 flex flex-col justify-center px-5 lg:px-10'>
         <HomeSectionCarosel data={paintingsData} sectionName={"Paintings"} />
-        <HomeSectionCarosel data={paintings} sectionName={"Sculptures"} />
-        <HomeSectionCarosel data={paintings} sectionName={"Digital Art"} />
-        <HomeSectionCarosel data={paintings} sectionName={"Canvas"} />
+        <HomeSectionCarosel data={sculpturesData} sectionName={"Sculptures"} />
+        <HomeSectionCarosel data={digitalArtData} sectionName={"Digital Art"} />
+        <HomeSectionCarosel data={canvasData} sectionName={"Canvas"} />
       </div>
     </div>
   );

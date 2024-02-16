@@ -2,6 +2,7 @@ package com.artgallery.cdacproj.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,9 +33,9 @@ public class UserServiceImpl implements UserDetailsService,UserService{
 	}
 
 	@Override
-	public User findUserById(Long userId) throws UserException {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<User> findUserById(Long userId) throws UserException {
+		
+		return userDao.findById(userId);
 	}
 
 	@Override
@@ -47,6 +48,22 @@ public class UserServiceImpl implements UserDetailsService,UserService{
 	public List<User> getAllUsers() {
 		List<User> ulist = userDao.findAll();
 		return ulist;
+	}
+
+	@Override
+	public User findUserByEmail(String email) throws UserException {
+		
+		return userDao.findByEmail(email);
+	}
+
+	@Override
+	public void changeUserRole(Long userId, String newRole) {
+		User user = userDao.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
+        
+        user.setRole(newRole);
+        userDao.save(user);
+		
 	}
 
 }

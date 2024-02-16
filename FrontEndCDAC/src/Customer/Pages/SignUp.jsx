@@ -37,7 +37,7 @@ export default function SignUp() {
       });
       if (response.status === 201) {
         alert('Signup successful! Please login.'); 
-        navigate('/'); 
+        navigate('/login'); 
       } else {
         throw new Error('Signup failed'); 
       }

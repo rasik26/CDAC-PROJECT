@@ -23,12 +23,6 @@ public class ProductController {
 	@Autowired
 	ProductService pservice;
 
-<<<<<<< HEAD
-=======
-	
-	
->>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
-
 	@GetMapping("/products") // controller for getting all products
 	public ResponseEntity<List<Product>> getAllProducts() {
 		List<Product> plist = pservice.getAllProducts();
@@ -43,10 +37,7 @@ public class ProductController {
 		else
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
 
 	
 	@PostMapping("/products/{pid}")
@@ -56,7 +47,7 @@ public class ProductController {
 		return ResponseEntity.ok("data added successfully");
 	}
 
-<<<<<<< HEAD
+
 
 
 //	@GetMapping("/products") // controller for getting all products
@@ -76,11 +67,9 @@ public class ProductController {
 
 
 
-=======
-	
->>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
+
 	@DeleteMapping("/delete/{id}")
-	public ResponseEntity deleteById(@PathVariable int id) {
+	public ResponseEntity<String> deleteById(@PathVariable int id) {
 		try {
 			pservice.deleteById(id);
 			return ResponseEntity.ok("Product deleted successfully");

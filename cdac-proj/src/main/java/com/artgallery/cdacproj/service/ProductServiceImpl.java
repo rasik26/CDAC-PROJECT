@@ -1,6 +1,7 @@
 package com.artgallery.cdacproj.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,10 +26,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-<<<<<<< HEAD
 
-=======
->>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
 	public List<Product> getProductByArtistName(String artistName) {
 		return pdao.findByArtistName(artistName);
 	}
@@ -43,18 +41,11 @@ public class ProductServiceImpl implements ProductService {
 		pdao.save(p);
 
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
 
 	@Override
-	public Product findById(Long productId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<Product> findById(long artId) {
+		return pdao.findById(artId);
+		
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> bf7086c523a4e10284aadce6389851501672f0e5
 }

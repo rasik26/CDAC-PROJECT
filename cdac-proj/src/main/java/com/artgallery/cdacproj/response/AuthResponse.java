@@ -6,14 +6,28 @@ public class AuthResponse {
 	
 	private String status;
 	
+	private String firstName;
+	
+	private long id;
+	
 	public AuthResponse() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AuthResponse(String jwt, String status) {
+	public AuthResponse(String jwt, String status,String firstName,long id) {
 		super();
 		this.jwt = jwt;
 		this.status = status;
+		this.firstName=firstName;
+		this.id=id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getJwt() {
@@ -31,4 +45,14 @@ public class AuthResponse {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	
 }

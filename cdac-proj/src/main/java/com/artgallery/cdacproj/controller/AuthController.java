@@ -74,6 +74,11 @@ public class AuthController {
         AuthResponse authResponse= new AuthResponse();
         authResponse.setJwt(token);
         authResponse.setStatus("Success signup");
+        
+        
+        User u =userRepository.findByEmail(savedUser.getEmail());
+        long id = u.getId();
+        authResponse.setId(id);
 		
         return new ResponseEntity<AuthResponse>(authResponse,HttpStatus.CREATED);
 	
@@ -90,8 +95,13 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         
         
+        User u =userRepository.findByEmail(username);
+        long id = u.getId();
+        
         String token = jwtProvider.generateToken(authentication);
-        AuthResponse authResponse= new AuthResponse(token,"Login Success");
+        AuthResponse authResponse= new AuthResponse(token,"Login Success",username,id);
+        
+        
 		
 		//authResponse.setStatus(true);
 		//authResponse.setJwt(token);
