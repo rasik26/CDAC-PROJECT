@@ -11,26 +11,30 @@ import jakarta.persistence.ManyToOne;
 public class Product {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
+
 	private String title;
-	
+
 	private String artistName;
-	
+
 	private String description;
-	
+
 	private int price;
-	
+
 	private int discountedPrice;
-	
+
 	private int discountPercentage;
-	
+
 	private String imageUrl;
-	
+
 	@ManyToOne()
-	@JoinColumn(name="categoryId")
+	@JoinColumn(name = "categoryId")
 	private Category category;
+
+	@ManyToOne
+	@JoinColumn(name = "artist_id")
+	private Artist artist;
 
 	public Product() {
 	}
@@ -120,8 +124,5 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
-	
-	
-	
+
 }

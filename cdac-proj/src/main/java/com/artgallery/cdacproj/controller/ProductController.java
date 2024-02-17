@@ -23,7 +23,6 @@ public class ProductController {
 	@Autowired
 	ProductService pservice;
 
-
 	@GetMapping("/products") // controller for getting all products
 	public ResponseEntity<List<Product>> getAllProducts() {
 		List<Product> plist = pservice.getAllProducts();
@@ -39,16 +38,18 @@ public class ProductController {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 
+	@PostMapping("/products/{pid}")
 
-	
+	public ResponseEntity<String> insertProduct(@RequestBody Product p) {
+		pservice.addnewProduct(p);
+		return ResponseEntity.ok("data added successfully");
+	}
+
 	@PostMapping("/products/add")
-    public ResponseEntity<String> addProduct(@RequestBody Product product) {
+	public ResponseEntity<String> addProduct(@RequestBody Product product) {
 		pservice.addnewProduct(product);
-        return ResponseEntity.ok("Data added successfully");
-    }
-
-
-
+		return ResponseEntity.ok("Data added successfully");
+	}
 
 	@GetMapping("/getProduct/{id}")
 	public ResponseEntity<Product> getProductById(@PathVariable int id) {
@@ -58,8 +59,6 @@ public class ProductController {
 		else
 			return null;
 	}
-
-
 
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<String> deleteById(@PathVariable int id) {
@@ -71,8 +70,6 @@ public class ProductController {
 		}
 	}
 
-
-	
 	@GetMapping("/artist/{artistName}")
 	public ResponseEntity<List<Product>> getArtistByName(@PathVariable("artistName") String artistName) {
 
@@ -84,9 +81,27 @@ public class ProductController {
 		else
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
-	
-	//getAllProductbyArttistId
-	//RemoveArtist
-	
+
+	// getAllProductbyArttistId
+	@GetMapping("/products/artistid/{artistId}")
+	public ResponseEntity<List<Product>> getAllProductsByArtistId(@PathVariable int artistId) {
+		List<Product> products = pservice.getAllProductsByArtistId(artistId);
+		if (!products.isEmpty()) {
+			return ResponseEntity.ok(products);
+		} else {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		}
+	}
+
+//	RemoveArtist
+//	@DeleteMapping("/products/artistid/delete/{artistId}")
+//	public ResponseEntity deleteAllProductsByArtistId(@PathVariable int artistId) {
+//		try {
+//			pservice.deleteById(artistId);
+//			return ResponseEntity.ok("all Products related to artist are deleted successfully");
+//		}catch(Exception e) {
+//			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+//		}
+//	}
 
 }

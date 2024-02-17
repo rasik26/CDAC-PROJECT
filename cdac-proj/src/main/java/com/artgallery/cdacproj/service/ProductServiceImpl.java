@@ -43,10 +43,6 @@ public class ProductServiceImpl implements ProductService {
 
 	}
 
-
-		
-
-
 	public Product getById(int id) {
 		// TODO Auto-generated method stub
 		Optional<Product> op = pdao.findById((long) id);
@@ -62,7 +58,9 @@ public class ProductServiceImpl implements ProductService {
 		return pdao.findById(productId);
 	}
 
-
+	@Override
+	public List<Product> getAllProductsByArtistId(int artistId) {
+		return pdao.findByArtistId(artistId);
 	}
 
-
+}
