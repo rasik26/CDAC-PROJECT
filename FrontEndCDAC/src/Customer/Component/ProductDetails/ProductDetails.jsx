@@ -10,7 +10,7 @@ export default function ProductDetails() {
   const location = useLocation();
   const { product } = location.state;
   // const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem('id'));
-
+console.log(product)
   const handleAddToCart = async () => {
     // if (!isLoggedIn) {
     //   navigate("/login");

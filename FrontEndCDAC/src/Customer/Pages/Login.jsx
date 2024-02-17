@@ -22,11 +22,25 @@ const Login = () => {
     try {
       const response = await axios.post('http://localhost:5454/auth/login', formData);
       if (response.status === 201) {
-
+        const role = response.data.role;
+  
+        // Store user data in sessionStorage
         sessionStorage.setItem('token', response.data.jwt);
         sessionStorage.setItem('firstName', response.data.firstName); 
-        sessionStorage.setItem('id',response.data.id);
-        navigate('/'); 
+        sessionStorage.setItem('id', response.data.id);
+        sessionStorage.setItem('role', response.data.role);
+  
+        // Navigate based on the role
+        if (role === "user") {
+          navigate('/');
+        } else if (role === "artist") {
+          navigate('/addproduct');
+        } else if (role === "admin") {
+          navigate('/admin');
+        } else {
+        
+          alert('Unknown role. Please contact support.');
+        }
       } else {
         alert('Login failed. Please check your credentials.'); 
       }
@@ -35,7 +49,7 @@ const Login = () => {
       alert('An error occurred while signing in. Please try again later.'); 
     }
   };
-
+  
   return (
     <div className="flex h-screen w-screen">
       <div className="flex items-center justify-center h-screen w-5/12">

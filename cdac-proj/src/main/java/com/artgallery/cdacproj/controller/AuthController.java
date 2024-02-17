@@ -97,9 +97,10 @@ public class AuthController {
         
         User u =userRepository.findByEmail(username);
         long id = u.getId();
+        String role = u.getRole();
         
         String token = jwtProvider.generateToken(authentication);
-        AuthResponse authResponse= new AuthResponse(token,"Login Success",username,id);
+        AuthResponse authResponse= new AuthResponse(token,"Login Success",username,id,role);
         
         
 		

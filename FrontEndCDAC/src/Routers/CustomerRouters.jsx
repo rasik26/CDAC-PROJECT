@@ -13,6 +13,9 @@ import Login from '../Customer/Pages/Login'
 import SignUp from '../Customer/Pages/SignUp'
 import ArtistPage from '../Customer/Pages/ArtistPage'
 import BecomeArtist from '../Customer/Pages/BecomeArtist'
+import AddProduct from '../Customer/Pages/AddProduct'
+import AboutUs from '../Customer/Pages/AboutUs'
+import OrderSummary from '../Customer/Component/Checkout/OrderSummary'
 
 const CustomerRouters = () => {
   return (
@@ -29,11 +32,14 @@ const CustomerRouters = () => {
             <Route path="/art/:artId" element={<ProductDetails/>}></Route>
             <Route path="/cart/checkout" element={<Checkout/>}></Route>
             <Route path="/account/order" element={<Order/>}></Route>
+            <Route path="/sum" element={<OrderSummary/>}></Route>
             <Route path="/account/order/:orderId" element={<OrderDetails/>}></Route>
+            <Route path="/aboutus" element={<AboutUs/>}></Route> 
             <Route path="/login" element={<Login/>}></Route> 
             <Route path="/signUp" element={<SignUp/>}></Route> 
             <Route path="/artist" element={<ArtistPage/>}></Route> 
             <Route path="/seller" element={<BecomeArtist/>}></Route> 
+            <Route path="/addproduct" element={<AddProduct/>}></Route>
 
             {/* <ProductDetails/>
   <Cart/>

@@ -64,7 +64,8 @@ const Cart = () => {
       }
     };
     
-    const totalPrice = cartData.reduce((total, item) => total + item.discountedPrice, 0);
+    const totalPrice = cartData ? cartData.reduce((total, item) => total + item.discountedPrice, 0) : 0;
+
     const discount = 200;
     const deliveryCharge = 99;
     const totalAmount = totalPrice - discount + deliveryCharge;
@@ -72,23 +73,25 @@ const Cart = () => {
     return (
         <div>
             <div className='lg:grid grid-cols-3 lg:px-16 relative'>
-                <div className='col-span-2 mt-5'>
-                  {loading ? (
-                    <CircularProgress />
-                  ) : error ? (
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <img  src={emptycart} alt="Empty Cart" style={{ width: '80%', maxWidth: '300px', height: 'auto' ,marginBottom:'100px',marginTop:'150px',marginLeft:'400px'}} />
-                  </div>
-                  ) : cartData.length === 0 ? (
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <img  src={emptycart} alt="Empty Cart" style={{ width: '80%', maxWidth: '300px', height: 'auto' ,marginBottom:'100px',marginTop:'150px',marginLeft:'400px'}} />
-                  </div>
-                  ) : (
-                    cartData.map((item) => (
-                      <CartItem key={item.id} items={item} updateCart={fetchCartData} />
-                    ))
-                  )}
-                </div>
+            <div className='col-span-2 mt-5'>
+            {loading ? (
+  <CircularProgress />
+) : error ? (
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <img src={emptycart} alt="Empty Cart" style={{ width: '80%', maxWidth: '300px', height: 'auto', marginBottom: '100px', marginTop: '150px', marginLeft: '400px' }} />
+  </div>
+) : (!cartData || cartData.length === 0) ? ( // Add a null check for cartData
+  <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <img src={emptycart} alt="Empty Cart" style={{ width: '80%', maxWidth: '300px', height: 'auto', marginBottom: '100px', marginTop: '150px', marginLeft: '400px' }} />
+  </div>
+) : (
+  cartData.map((item) => (
+    <CartItem key={item.id} items={item} updateCart={fetchCartData} />
+  ))
+)}
+
+</div>
+
                 {cartData.length > 0 && (
                   <div className='px-5 py-5 sticky top-0 h-[100vh] mt-5 lg:mt-0'>
                   <Button onClick={handleClearCart} variant='contained' className='w-full py-5' sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd" }}>

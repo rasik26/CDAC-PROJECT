@@ -48,7 +48,7 @@ const Navbar = () => {
                 <div className="flex items-center mr-8">
                     <p onClick={()=>navigate('/art')} className="mr-4 text-gray-700 cursor-pointer">Explore</p>
                     <p onClick={()=>navigate('/artist')} className="mr-4 text-gray-700 cursor-pointer">Artists</p>
-                    <p className="mr-4 text-gray-700 cursor-pointer">About Us</p>
+                    <p onClick={()=>navigate('/aboutus')} className="mr-4 text-gray-700 cursor-pointer">About Us</p>
                     <p onClick={()=>navigate('/seller')} className="mr-4 text-gray-700 cursor-pointer">Seller</p>
                 </div>
             </div>

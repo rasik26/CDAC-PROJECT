@@ -12,7 +12,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const paintings = await productService.getProductsByCategory('Painting');
+        const paintings = await productService.getProductsByCategory('Paintings');
         const sculptures = await productService.getProductsByCategory('Sculpture');
         const digitalArt = await productService.getProductsByCategory('Digital');
         const canvas = await productService.getProductsByCategory('Canvas');
