@@ -2,11 +2,25 @@ package com.artgallery.cdacproj.model;
 
 import java.util.Optional;
 
-public class Order {
+import org.springframework.stereotype.Component;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+@Component 
+public class Orders{
+	@Id
 	private int oId;
-	Cart cart;
-	Product prod;
-	User user;
+	@ManyToOne
+    private Cart cart;
+	
+	@ManyToOne
+	private Product prod;
+	
+	@ManyToOne
+	private User user;
 	
 	public int getoId() {
 		return oId;
@@ -32,7 +46,11 @@ public class Order {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Order(int oId, Cart cart, Product prod, User user) {
+	public Orders() {
+	    // Default constructor
+	}
+
+	public Orders(int oId, Cart cart, Product prod, User user) {
 		super();
 		this.oId = oId;
 		this.cart = cart;
@@ -43,7 +61,7 @@ public class Order {
 	public String toString() {
 		return "Order [oId=" + oId + ", cart=" + cart + ", prod=" + prod + ", user=" + user + "]";
 	}
-	public Optional<Order> findById(Long cartid) {
+	public Optional<Orders> findById(Long cartid) {
 		// TODO Auto-generated method stub
 		return null;
 	}

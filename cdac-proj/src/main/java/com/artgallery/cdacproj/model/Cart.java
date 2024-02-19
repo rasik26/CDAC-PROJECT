@@ -1,9 +1,7 @@
 package com.artgallery.cdacproj.model;
-
-
-
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +23,9 @@ public class Cart {
     )
     private List<Product> products = new ArrayList<>();
 
-    private float total;
+    @Column(name = "total", columnDefinition = "DECIMAL(10, 2)")
+    private Double total;
+
 
     public Cart() {
     }
@@ -58,11 +58,11 @@ public class Cart {
         this.products = products;
     }
 
-    public float getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(float total) {
+    public void setTotal(Double total) {
         this.total = total;
     }
 
@@ -84,7 +84,7 @@ public class Cart {
     }
 
     public void updateTotal() {
-        float newTotal = 0;
+    	Double newTotal = 0.0;
         for (Product product : products) {
             newTotal += product.getPrice();
         }

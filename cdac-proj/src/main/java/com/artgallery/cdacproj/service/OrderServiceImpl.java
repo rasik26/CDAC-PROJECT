@@ -7,20 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.artgallery.cdacproj.dao.OrderDao;
-import com.artgallery.cdacproj.model.Order;
+import com.artgallery.cdacproj.model.Orders;
 
 @Service
 public class OrderServiceImpl implements OrderService {
 
 	@Autowired
-	private Order order;
+	private Orders orders;
+
 
 	@Autowired
 	private OrderDao odao;
 
 	@Override
-	public Order getorderbyCartid(Long cartid) {
-		Optional<Order> op = order.findById(cartid);
+	public Orders getorderbyCartid(Long cartid) {
+		Optional<Orders> op = orders.findById(cartid);
 		if (op.isPresent())
 			return op.get();
 		else
@@ -28,8 +29,8 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public List<Order> getallorder() {
-		List<Order> olist = odao.findAll();
+	public List<Orders> getallorder() {
+		List<Orders> olist = odao.findAll();
 		if (olist != null)
 			return olist;
 		return olist;
