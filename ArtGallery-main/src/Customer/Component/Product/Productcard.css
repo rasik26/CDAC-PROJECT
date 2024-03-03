@@ -1,0 +1,15 @@
+.productCard .textpart {
+    transition: transform 0.3s ease-in-out;
+}
+
+.productCard .image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.productCard:hover .textpart {
+    transform: translateY(-1rem);
+}
+
+.productCard:hover .image {
+    transform: scale(1.1);
+}
