@@ -1,0 +1,22 @@
+export const mainCarsoleData = [
+    {
+        image:"https://www.moma.org/d/c/installation_images/W1siZiIsIjQ5NDI1MSJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=3628e04ea87066a5",
+        path:""
+    },
+    {
+        image:"https://ashburtonartgallery.org.nz/starburst/wp-content/uploads/2022/08/Kelliher-exhibition-main.jpg",
+        path:""
+    },
+    {
+        image:"https://www.moma.org/d/c/installation_images/W1siZiIsIjQ5NDI1MSJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=3628e04ea87066a5",
+        path:""
+    },
+    {
+        image:"https://ashburtonartgallery.org.nz/starburst/wp-content/uploads/2022/08/Kelliher-exhibition-main.jpg",
+        path:""
+    },
+    {
+        image:"https://lancashirelandscapeart.co.uk/wp-content/uploads/2023/06/liverpool_ban.png",
+        path:""
+    }
+]
