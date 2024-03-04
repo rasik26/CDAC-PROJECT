@@ -47,7 +47,7 @@ public class ProductController {
 
 	
 	@PostMapping("/products/add")
-    public ResponseEntity<String> addProduct(@RequestBody Product product) {
+        public ResponseEntity<String> addProduct(@RequestBody Product product) {
 		pservice.addnewProduct(product);
         return ResponseEntity.ok("Data added successfully");
     }
