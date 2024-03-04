@@ -23,8 +23,8 @@ import com.razorpay.*;
 @RequestMapping("/api/carts")
 public class CartController {
 
-    private final CartService cartService;
-    private final UserService userService;
+    private CartService cartService;
+    private UserService userService;
 
     @Autowired
     public CartController(CartService cartService, UserService userService) {
