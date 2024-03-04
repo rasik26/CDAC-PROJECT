@@ -95,7 +95,7 @@ public class ProductController {
                 	.map(Product::getArtistName)
                 	.distinct()
                 	.collect(Collectors.toList());
-    }
+    	}
 	
 	
 
