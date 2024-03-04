@@ -50,7 +50,7 @@ public class ProductController {
         public ResponseEntity<String> addProduct(@RequestBody Product product) {
 		pservice.addnewProduct(product);
         return ResponseEntity.ok("Data added successfully");
-    }
+        }
 
 
 
@@ -80,24 +80,21 @@ public class ProductController {
 	
 	@GetMapping("/artist/{artistName}")
 	public ResponseEntity<List<Product>> getArtistByName(@PathVariable("artistName") String artistName) {
-
 		List<Product> productsByArtistNameList = pservice.getProductByArtistName(artistName);
-
 		if (productsByArtistNameList != null)
 			return ResponseEntity.ok(productsByArtistNameList);
-
 		else
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
 	
-    @GetMapping("/artists/name")
-    public List<String> getUniqueArtists() {
-        List<Product> products = productRepository.findAll();
-        return products.stream()
-                .map(Product::getArtistName)
-                .distinct()
-                .collect(Collectors.toList());
+          @GetMapping("/artists/name")
+          public List<String> getUniqueArtists() {
+          	List<Product> products = productRepository.findAll();
+          	return products.stream()
+                	.map(Product::getArtistName)
+                	.distinct()
+                	.collect(Collectors.toList());
     }
 	
 	
