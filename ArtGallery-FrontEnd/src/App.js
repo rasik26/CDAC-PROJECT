@@ -10,13 +10,11 @@ import SignUp from './Customer/Pages/SignUp';
 function App() {
   return (
     <div>
-      <Provider store={store}>
         <Routes>
           <Route path='/*' element={<CustomerRouters/>}></Route>
           <Route path="/login" element={<Login/>}></Route> 
           <Route path="/signUp" element={<SignUp/>}></Route> 
         </Routes>
-      </Provider>
     </div>
   );
 }
